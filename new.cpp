@@ -2,10 +2,10 @@
 #include "Matrix.h"
 
 const int MAXINT = 32767;// Positive infinite
-const int MAXNUM = 4;
+const int MAXNUM = 5;
 int dist[MAXNUM];
 int preva[MAXNUM];
-
+    
 using namespace std;
 
 Matrix Dijkstra(Matrix temp, int v0) {
@@ -74,6 +74,8 @@ int main(int argc, char const *argv[])
 	{
 		cout << "Length: " << dist[i] << endl;
 	}
-	system("pause");
-	return 0;
+	//system("pause");
+
+	
+    return 0;
 }

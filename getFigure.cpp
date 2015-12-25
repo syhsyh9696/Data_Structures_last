@@ -27,16 +27,17 @@ Matrix getFigure() {
 		int temp1 = (int)(temp[1] - '0');
 		int temp2 = (int)(temp[3] - '0');
 
-		newFigure[temp1][temp2] = length;		
+		newFigure[temp1][temp2] = length;// store length
+		newFigure[temp2][temp1] = length;// store length 		
 
 		cout << "Do you want enter new? (enter 0 for next, enter 1 for exit)" << endl 
 		     << "?";
 		cin >> flag;
 	}
 	
-	for (int i = 0; i < nodeNumber; ++i) {
-		newFigure[i][i] = 1;
-	}
+	// for (int i = 0; i < nodeNumber; ++i) {
+	// 	newFigure[i][i] = 1;
+	// }
 
 	// for (int i = 0; i < nodeNumber; ++i) {
 	// 	for(int j = 0; j < nodeNumber; ++j) {

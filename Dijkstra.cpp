@@ -1,3 +1,6 @@
+#include <iostream>
+
+using namespace std;
 const int  MAXINT = 32767;
 const int MAXNUM = 10;
 int dist[MAXNUM];
@@ -29,7 +32,7 @@ void Dijkstra(int v0)
       　　    if((!S[j]) && dist[j]<mindist)
       　　    {
          　　       u = j;                             // u保存当前邻接点中距离最小的点的号码 
-         　 　      mindist = dist[j];
+         　 　      mindist = dist[j];  
        　　   }
        　　S[u] = true; 
        　　for(int j=1; j<=n; j++)
