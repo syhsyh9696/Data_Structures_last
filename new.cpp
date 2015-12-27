@@ -1,8 +1,10 @@
 #include <iostream>
+#include <vector>
 #include "Matrix.h"
 
+
 const int MAXINT = 32767;// Positive infinite
-const int MAXNUM = 5;
+const int MAXNUM = 4;
 int dist[MAXNUM];
 int preva[MAXNUM];
     
@@ -60,6 +62,7 @@ int main(int argc, char const *argv[])
 	test[1][2] = 3;
 	test[1][3] = 32767;
 
+
 	test[2][0] = 4;
 	test[2][1] = 3;
 	test[2][3] = 6;
@@ -67,12 +70,12 @@ int main(int argc, char const *argv[])
 	test[3][0] = 1;
 	test[3][1] = 32767;
 	test[3][2] = 6;
-	//int prev[MAXNUM];
 
 	Dijkstra(test, 0);
 	for (int i = 0; i < 4; ++i)
 	{
 		cout << "Length: " << dist[i] << endl;
+        cout << preva[i] << endl;
 	}
 	//system("pause");
 

@@ -35,10 +35,10 @@ bool SS_Node::getInformation() {
 	return true;
 }
 
-// int main(int argc, char const *argv[])
-// {
-// 	SS_Node te;
-// 	te.getInformation();
-// 	std::cout << te.getName();
-// 	return 0;
-// }
+int main(int argc, char const *argv[])
+{
+	SS_Node te;
+	te.getInformation();
+	std::cout << te.getName();
+	return 0;
+}

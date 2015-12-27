@@ -46,3 +46,9 @@ void Dijkstra(int v0)
         　    　}
    　　}
 }
+
+int main(int argc, char const *argv[])
+{
+  Dijkstra(2);
+  return 0;
+}
