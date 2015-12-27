@@ -4,7 +4,7 @@
 #include <string>
 #include <cstdlib>
 
-const int MAXNUM = 4;
+const int MAXNUM = 10;
 void outputLine(std::string, std::string, std::string);
 
 class SS_Node //scenic spot class store data
@@ -56,14 +56,16 @@ SS_Node* readSpot() {
 	while(!inClientFile.eof()) {
 		std::string tempString;
 		for (int j = 0; j < 3; ++j) {
+            // Function getline  
 			getline(inClientFile, tempString);
-			switch (j) {
+			
+            switch (j) {
 			case 0:Temp[i].Number = tempString;break;
 			case 1:Temp[i].Name = tempString;break;
 			case 2:Temp[i].Introduction = tempString;break;
 			}
 		}
-
+        ++i;
 	}
 
 	return Temp;
