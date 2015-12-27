@@ -84,7 +84,7 @@ int main(int argc, char const *argv[])
 
 	for (int i = 0; i < 10; ++i) {
 		std::cout << std::left << std::setw(10) << test[i].Number
-			<< std::endl << std::setw(10) << test[i].Name << std::endl;
+			      << std::endl << std::setw(10) << test[i].Name << std::endl;
 	}
 	return 0;
 }
