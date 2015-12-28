@@ -26,27 +26,25 @@ Matrix Dijkstra(Matrix temp, int v0) {
 	dist[v0] = 0;
 	S[v0] = true;
 
-	for (int i = 2; i < nodeNumber; ++i) {
+	for (int i = 2; i <= nodeNumber; i++) {
 		int mindist = MAXINT;
 		int u = v0;
-		for (int j = 1; j <= nodeNumber; ++j) {
+		for (int j = 0; j < nodeNumber; ++j)
 			if ((!S[j]) && dist[j] < mindist) {
 				u = j;
 				mindist = dist[j];
 			}
 
-			S[u] = true;
+		S[u] = true;
 
-			for (int j = 0; j < nodeNumber; ++j) {
-				if ((!S[j]) && temp[u][j] < MAXINT) {
-					if (dist[u] + temp[u][j] < dist[j]) {
-						dist[j] = dist[u] + temp[u][j];
-						preva[j] = u;
-					}
+		for (int j = 0; j < nodeNumber; j++) {
+			if ((!S[j]) && temp[u][j] < MAXINT) {
+				if (dist[u] + temp[u][j] < dist[j]) {
+					dist[j] = dist[u] + temp[u][j];
+					preva[j] = u;
 				}
 			}
 		}
-
 	}
 	return temp;
 }
