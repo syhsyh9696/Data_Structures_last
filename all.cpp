@@ -120,25 +120,25 @@ int main() {
 
 		Dijkstra(test.School_road, startNum);
 		std::cout << "The road length is: " << dist[reachNum] << std::endl;
-		for (int i = 0; i < 4; ++i)
+		for (int i = 0; i < 10; ++i)
 		{
 			cout << "Length: " << dist[i] << endl;
 		}
-	/*
-		vector<int> tempStore = {};
-		int j = 0;
-		while (preva[preva[reachNum]] != 0) {
-			tempStore[j] = preva[reachNum];
-			preva[reachNum] = preva[preva[reachNum]];
-			++j;
-		}
+
+		// vector<int> tempStore = {};
+		// int j = 0;
+		// while (preva[preva[reachNum]] != 0) {
+		// 	tempStore[j] = preva[reachNum];
+		// 	preva[reachNum] = preva[preva[reachNum]];
+		// 	++j;
+		// }
 	
 		
-		std::cout << "The road is: " << std::endl;
-		for (; j >= 0; --j) {
-			std::cout << tempStore[j] << "---";
-		}
-	*/
+		// std::cout << "The road is: " << std::endl;
+		// for (; j >= 0; --j) {
+		// 	std::cout << tempStore[j] << "---";
+		// }
+
 		std::cout << std::endl;
 		std::cout << "Continue enter 0,Exit enter 1:" << std::endl
 			<< "?";
@@ -255,3 +255,4 @@ Matrix Dijkstra(Matrix temp, int v0) {
 	}
 	return temp;
 }
+
