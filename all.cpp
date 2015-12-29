@@ -78,6 +78,9 @@ Matrix Dijkstra(Matrix, int);
 int main() {
 	School test;
 	//test.School_road = getFigure();
+	for(int i = 0; i < MAXNUM; ++i)
+		for(int j = 0; j < MAXNUM; ++j)
+			test.School_road[i][j] = 32767;
 	test.Scenic_Spot = readSpot();
 
 	test.School_road[0][1] = 2;
@@ -96,7 +99,6 @@ int main() {
 	test.School_road[3][1] = 32767;
 	test.School_road[3][2] = 6;
 	
-	// std::cout << test.School_road[2][1] << std::endl;
 	
 	std::cout << "All Scenic Spot is:" << std::endl;
 	for (int i = 0;i < MAXNUM; ++i) {
@@ -120,18 +122,20 @@ int main() {
 
 		Dijkstra(test.School_road, startNum);
 		std::cout << "The road length is: " << dist[reachNum] << std::endl;
-		for (int i = 0; i < 10; ++i)
+		for (int i = 0; i < 1; ++i)
 		{
 			cout << "Length: " << dist[i] << endl;
 		}
 
-		// vector<int> tempStore = {};
-		// int j = 0;
-		// while (preva[preva[reachNum]] != 0) {
-		// 	tempStore[j] = preva[reachNum];
-		// 	preva[reachNum] = preva[preva[reachNum]];
-		// 	++j;
-		// }
+		int j = reachNum;
+		while (preva[j] != 0) {
+			std::cout << preva[j];
+			if (j != 0)
+				std::cout << "---";
+			else 
+				std::cout << std::endl;
+			j = preva[j];
+		}
 	
 		
 		// std::cout << "The road is: " << std::endl;
@@ -145,7 +149,6 @@ int main() {
 		std::cin >> flag;
 	}
 
-	system("pause");
 	return 0;
 }
 
