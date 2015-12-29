@@ -73,6 +73,7 @@ Matrix getFigure();
 void outputLine(std::string, std::string, std::string);
 SS_Node* readSpot();
 Matrix Dijkstra(Matrix, int);
+void findNode(School);
 
 
 int main() {
@@ -124,7 +125,7 @@ int main() {
 		std::cout << "The road length is: " << dist[reachNum] << std::endl;
 		for (int i = 0; i < 1; ++i)
 		{
-			cout << "Length: " << dist[i] << endl;
+			std::cout << "Length: " << dist[i] << std::endl;
 		}
 
 		int j = reachNum;
@@ -136,18 +137,21 @@ int main() {
 				std::cout << std::endl;
 			j = preva[j];
 		}
-	
-		
-		// std::cout << "The road is: " << std::endl;
-		// for (; j >= 0; --j) {
-		// 	std::cout << tempStore[j] << "---";
-		// }
 
+		findNode(test);
 		std::cout << std::endl;
 		std::cout << "Continue enter 0,Exit enter 1:" << std::endl
 			<< "?";
 		std::cin >> flag;
 	}
+
+	std::cout << "Information inquiry:" << std::endl
+		<< "Node number? ";
+	int temp_node_number = 0;
+	std::cin >> temp_node_number;
+	std::cout << left <<  setw(5) <<test.Scenic_Spot[temp_node_number].Number << setw(30)
+		<< test.Scenic_Spot[temp_node_number].Name << setw(30) << test.Scenic_Spot[temp_node_number].Introduction
+		<< std::endl;
 
 	return 0;
 }
@@ -258,4 +262,19 @@ Matrix Dijkstra(Matrix temp, int v0) {
 	}
 	return temp;
 }
+
+/*
+void findNode(School tempS) {
+	std::cout << "Please enter the node Number You want to know" << std::endl
+		<< "Node Number?";
+	int temp;
+	cin >> temp;
+
+	std::cout << left <<  setw(5) <<tempS.Scenic_Spot[temp].Number << setw(30)
+		<< tempS.Scenic_Spot[temp].Name << setw(30) << tempS.Scenic_Spot[temp].Introduction
+		<< std::endl
+		<< std::endl;
+}
+
+*/
 
